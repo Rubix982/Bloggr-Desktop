@@ -1,0 +1,129 @@
+.container {
+    width: 98vw;
+    display: flex;
+    justify-content: center;
+}
+
+.postcontainer {
+    width: 55%;
+    height: 100vh;
+}
+
+.postheader {
+    display: inline-flex;
+    width: 100%;
+    border-bottom: 1px solid #c26401;
+}
+
+.imagecontainer {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+}
+
+.headingcontainer {
+    width: 85%;
+    display: flex;
+    padding: 20px;
+    padding-left: 5px;
+    flex-direction: column;
+}
+
+.heading {
+    font-family: 'Google Sans',Roboto,Arial,sans-serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #c26401;
+}
+
+.teachername{
+    letter-spacing: .01428571em;
+    font-family: Roboto,Arial,sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #5f6368;
+}
+
+
+
+
+
+
+.postcontent, .description {
+    width: 100%;
+    padding: 0;
+}
+
+
+
+
+.description {
+    padding: 0;
+}
+
+.content, .descriptionContent {
+    word-wrap: break-word;
+    text-align: justify;
+    letter-spacing: 0.01428571em;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    color: #3c4043;
+    padding: 5px;
+    border-bottom: 3px solid #e8eaed;
+}
+
+
+.buttonContainer{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+
+.lbtn, .rbtn{
+    margin: 10px;
+    height: 50px;
+    width: 100px;
+    background-color: #c26401;
+    cursor: pointer;
+}
+
+.lbtn:hover, .rbtn:hover {
+    background-color: chocolate;
+}
+
+.rbtn{
+    margin-left: 100px;
+}
+
+
+
+
+
+
+/* Queries */
+@media (max-width: 768px) { 
+    .container {
+        justify-content: flex-start;
+    }
+
+    .postcontainer {
+        width: 100%;
+    }
+
+    .imagecontainer {
+        width: 25%;
+    }
+
+    .headingcontainer {
+        width: 75%;
+    }
+
+    .content {
+        padding: 3%;
+        padding-right: 6%;
+    }
+}
