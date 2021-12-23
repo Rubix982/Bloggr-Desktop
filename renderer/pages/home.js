@@ -4,7 +4,7 @@ import { Grid, Button } from "@mui/material";
 
 import styles from "./styles/index.module.css";
 
-export default function Index() {
+export default function Home() {
   return (
     <Grid
       container
