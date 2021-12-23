@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import styles from './styles/profile.module.css';
 import jwt from 'jwt-decode'
-import { styled } from "@material-ui/core/styles";
+import { styled } from "@mui/material/styles";
 import Router from "next/router";
 
 import {
@@ -11,12 +11,8 @@ import {
     FormControl,
     InputLabel,
     InputBase,
-    Typography,
-    Box,
-    Modal,
-    Button,
-
-} from "@material-ui/core";
+    Button
+} from "@mui/material";
 
 const BootstrapInput = styled(InputBase)(({ theme }) => ({
     'label + &': {
@@ -87,7 +83,7 @@ export default function Profile() {
                 };
                 const Token = localStorage.getItem('Token');
                 const user = jwt(Token);
-                axios.put(`http://localhost:37606/api/users/${user.Id}`, formData, { headers: {"Authorization" : `Bearer ${Token}`} })
+                axios.put(`https://localhost:37606/api/users/${user.Id}`, formData, { headers: {"Authorization" : `Bearer ${Token}`} })
                 .then(response => {alert(`Profile Updated Successfully!`); Router.push('/feed')} )
                 .catch(error => alert(error));
             }
@@ -168,7 +164,7 @@ export default function Profile() {
 
                         <FormControl variant="standard">
                             <InputLabel className={styles.labelStyle} shrink htmlFor="bootstrap-input">
-                                Password
+                                New Password
                             </InputLabel>
 
                             <BootstrapInput 
@@ -184,7 +180,7 @@ export default function Profile() {
 
                         <FormControl variant="standard">
                             <InputLabel className={styles.labelStyle} shrink htmlFor="bootstrap-input">
-                                Confirm password
+                                Confirm New password
                             </InputLabel>
 
                             <BootstrapInput 

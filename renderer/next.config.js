@@ -1,9 +1,23 @@
 module.exports = {
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      config.target = 'electron-renderer';
+    async redirects() {
+        return [
+            {
+                source: "/",
+                has: [
+                    {
+                        type: 'header',
+                        key: 'x-authorized',
+                        value: '(?<authorized>yes|true)',
+                    },
+                ],
+                permanent: false,
+                destination: '/feed'
+            },
+            {
+                source: '/blog',
+                destination: '/blog/1',
+                permanent: true,
+            }
+        ]
     }
-
-    return config;
-  },
-};
+}
