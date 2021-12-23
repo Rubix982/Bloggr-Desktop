@@ -14,7 +14,7 @@ export default function Create() {
     const fetchData = async () => {
       setToken(localStorage.getItem("Token"));
       await axios
-        .get(`http://localhost:37606/api/blogs`, {
+        .get(`https://bloggrapi.azurewebsites.net/api/blogs`, {
           headers: { Authorization: `Bearer ${localStorage.getItem("Token")}` },
         })
         .then((response) => {
@@ -29,7 +29,7 @@ export default function Create() {
 
   const searchBlogs = async () => {
     await axios
-      .get(`http://localhost:37606/api/SearchBlogs/${searchString}`, {
+      .get(`https://bloggrapi.azurewebsites.net/api/SearchBlogs/${searchString}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("Token")}` },
       })
       .then((response) => {

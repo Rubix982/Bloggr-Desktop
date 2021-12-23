@@ -64,7 +64,7 @@ export default function Register() {
         Password: Password,
       };
       axios
-        .post("http://localhost:37606/api/register", formData)
+        .post("https://bloggrapi.azurewebsites.net/api/register", formData)
         .then((response) => {
           alert(`User Registered Successfully!`);
           Router.push("/login");
