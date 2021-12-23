@@ -2,7 +2,7 @@ import React from "react";
 
 import { Grid, Button } from "@mui/material";
 
-import styles from "./styles/index.module.css";
+import styles from "./styles/home.module.css";
 
 export default function Home() {
   return (
